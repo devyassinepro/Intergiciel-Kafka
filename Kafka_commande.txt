@@ -1,0 +1,43 @@
+Start Zookeeper
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+
+Start Kafka Server
+bin/kafka-server-start.sh config/server.properties
+
+
+Create Kafka Topic
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic topic1
+
+
+Consume from the Kafka Topic via Console
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic Kafka_Example --from-beginning
+
+
+
+----------------
+Part 1 : (Topic 1)
+
+
+Push data from APi to postgrsql 
+http://localhost:8082/kafka/push
+
+
+Voici les commande pour Envoyer les données : 
+
+///retourne les valeurs globales
+http://localhost:8080/kafka/globaldata
+
+
+///Get All data Global From Api 
+http://localhost:8080/kafka/globaldata
+
+///retourne une moyenne des cas confirmésFrom Api 
+http://localhost:8080/kafka/confirmedavg
+
+
+///(retourne une moyenne des Décès From Api 
+http://localhost:8080/kafka/deathsavg
+
+c///retourne le pourcentage de Décès par rapport aux cas confirmés From Api 
+http://localhost:8080/kafka/ountriesdeathspercent

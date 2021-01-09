@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Ecommerce App EbayClone TP</title>
+
+
+	<div th:replace="fragments :: menu"></div>
+
+</head>
+<body>
+<!-- create navigation bar ( header) -->
+<div th:replace="fragments :: Navigation"></div>
+
+
+
+<br>
+<br>
+
+<div class="container">
+	<div class="row">
+
+		<h1>Test Sucess</h1>
+		<h5 th:text="${produit}"></h5>
+
+
+	</div>
+</div>
+</body>
+</html>
